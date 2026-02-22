@@ -65,17 +65,17 @@ const misProyectos = [
     { 
         nombre: "Traductor Inteligente", 
         desc: "App de traducción que ya migré a GitHub.",
-        link: "https://github.com/jonatanalejandroflores-creator/TU-REPO-TRADUCTOR" // Pon el link real aquí
+        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-modo" 
     },
     { 
         nombre: "Canchas Ya", 
         desc: "Gestión de reservas deportivas, ya en GitHub.",
-        link: "https://github.com/jonatanalejandroflores-creator/TU-REPO-CANCHAS" // Pon el link real aquí
+        link: "https://canchaya-jona-2026.web.app", "https://canchaya-jona-2026.web.app/admin.html" 
     },
     { 
         nombre: "Calculadora Pro", 
         desc: "Mi primera app en JS.",
-        link: "https://github.com/jonatanalejandroflores-creator/TU-REPO-CALCULADORA" // Pon el link real aquí
+        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-modo"
     }
 ];
 
