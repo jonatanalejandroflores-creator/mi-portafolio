@@ -12,27 +12,33 @@
         <nav>
             <ul>
                 <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#foro">Foro (Próximamente)</a></li>
+                <li><a href="#foro">Foro</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="app">
+    <main>
         <section id="proyectos">
             <h2>Mis Aplicaciones</h2>
             <div class="grid-proyectos" id="lista-proyectos">
                 </div>
+        </section>
+
+        <hr>
+
+        <section id="foro">
+            <h2>Foro de la Comunidad</h2>
+            <div id="mensajes-foro" class="caja-mensajes">
+                </div>
+            
+            <div class="controles-foro">
+                <input type="text" id="nombre-usuario" placeholder="Tu nombre">
+                <input type="text" id="texto-mensaje" placeholder="Escribe un mensaje...">
+                <button onclick="enviarMensaje()">Enviar</button>
+            </div>
         </section>
     </main>
 
     <script type="module" src="js/script.js"></script>
 </body>
 </html>
-<section id="foro">
-    <h2>Foro de la Comunidad</h2>
-    <div id="mensajes-foro" style="border: 1px solid #ccc; height: 200px; overflow-y: scroll; padding: 10px; margin-bottom: 10px;">
-        </div>
-    <input type="text" id="nombre-usuario" placeholder="Tu nombre">
-    <input type="text" id="texto-mensaje" placeholder="Escribe un mensaje...">
-    <button onclick="enviarMensaje()">Enviar</button>
-</section>
