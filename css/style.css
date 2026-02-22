@@ -158,3 +158,23 @@ header {
     border: 1px solid #10b981;
     align-self: flex-end; /* Lo tira a la derecha como en WhatsApp */
 }
+/* Burbuja especial para el administrador (jona) */
+.caja-mensajes p {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* Si el mensaje es de jona, lo pintamos de verde y lo mandamos a la derecha */
+.caja-mensajes p:has(strong:contains("jona")) {
+    background-color: #dcfce7; /* Verde clarito */
+    align-self: flex-end;      /* Lo mueve a la derecha */
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #86efac;
+}
+
+/* Ajuste de color para el nombre del admin */
+.caja-mensajes p:has(strong:contains("jona")) strong {
+    color: #15803d;
+}
