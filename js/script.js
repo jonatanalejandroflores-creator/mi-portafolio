@@ -3,23 +3,22 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore, collection, addDoc, query, onSnapshot, orderBy } 
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// 2. CONFIGURACIÓN (REEMPLAZA ESTOS DATOS CON LOS DE TU CONSOLA DE FIREBASE)
+// 2. CONFIGURACIÓN (Asegúrate de que estos sean tus datos reales de la consola)
 const firebaseConfig = {
-  apiKey: "AIzaSyAVB0-j6cQGsf_IQX1iren8xwqtv4YaG-g",
-  authDomain: "mi-foro-portafolio.firebaseapp.com",
-  projectId: "mi-foro-portafolio",
-  storageBucket: "mi-foro-portafolio.firebasestorage.app",
-  messagingSenderId: "988761302845",
-  appId: "1:988761302845:web:5dc36156b5a98773584754"
+    apiKey: "AIzaSyAVB0-j6cQGsf_IQX1iren8xwqtv4YaG-g",
+    authDomain: "mi-foro-portafolio.firebaseapp.com",
+    projectId: "mi-foro-portafolio",
+    storageBucket: "mi-foro-portafolio.firebasestorage.app",
+    messagingSenderId: "988761302845",
+    appId: "1:988761302845:web:5dc36156b5a98773584754"
 };
 
-// Inicializar Firebase y la Base de Datos
+// Inicializar
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // --- SECCIÓN: LÓGICA DEL FORO ---
 
-// Función para enviar mensajes (la hacemos global para que el botón HTML la encuentre)
 window.enviarMensaje = async () => {
     const user = document.getElementById('nombre-usuario').value;
     const text = document.getElementById('texto-mensaje').value;
@@ -31,39 +30,31 @@ window.enviarMensaje = async () => {
                 mensaje: text,
                 fecha: new Date()
             });
-            document.getElementById('texto-mensaje').value = ""; // Limpiar input de mensaje
-        } catch (error) {
-            console.error("Error al enviar:", error);
+            document.getElementById('texto-mensaje').value = ""; 
+        } catch (e) {
+            console.error("Error al enviar: ", e);
         }
     } else {
-        alert("Por favor rellena ambos campos");
+        alert("Completa tu nombre y el mensaje.");
     }
 };
 
-// Escuchar mensajes en tiempo real
 const q = query(collection(db, "mensajes"), orderBy("fecha", "asc"));
 onSnapshot(q, (snapshot) => {
     const contenedorForo = document.getElementById('mensajes-foro');
     if (contenedorForo) {
-        contenedorForo.innerHTML = ""; // Limpiamos antes de actualizar
+        contenedorForo.innerHTML = ""; 
         snapshot.forEach((doc) => {
             const data = doc.data();
             const p = document.createElement('p');
             p.innerHTML = `<strong>${data.usuario}:</strong> ${data.mensaje}`;
             contenedorForo.appendChild(p);
         });
-        // Scroll automático al final
         contenedorForo.scrollTop = contenedorForo.scrollHeight;
     }
 });
 
-// --- SECCIÓN: RENDERIZADO DE PROYECTOS ---
-
-// ... (código de Firebase arriba)
-
-const misProyectos = [
-const misProyectos = [
-   // ... (código de Firebase arriba)
+// --- SECCIÓN: TUS PROYECTOS (LISTA Y RENDERIZADO) ---
 
 const misProyectos = [
     { 
@@ -81,7 +72,6 @@ const misProyectos = [
         desc: "Mi primera app en JS.",
         link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-nodo" 
     }
-]; 
 ];
 
 const contenedorProyectos = document.getElementById('lista-proyectos');
