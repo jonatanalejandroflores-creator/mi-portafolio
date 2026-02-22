@@ -160,3 +160,19 @@ h1, h2 {
     background: #cbd5e1;
     border-radius: 10px;
 }
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Esto hace que la imagen llene el espacio sin deformarse */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+.card:hover .card-img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.card {
+    overflow: hidden; /* Para que la imagen no se salga de la tarjeta al agrandarse */
+}

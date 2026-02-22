@@ -64,28 +64,33 @@ onSnapshot(q, (snapshot) => {
 const misProyectos = [
     { 
         nombre: "Traductor Inteligente", 
-        desc: "App de traducción que ya migré a GitHub.",
-        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-nodo" 
+        desc: "App de traducción con IA migrada a Streamlit.",
+        link: "https://tu-link...", 
+        imagen: "img/traductor.png" // <--- Agregamos esto
     },
     { 
         nombre: "Canchas Ya", 
-        desc: "Gestión de reservas deportivas, ya en GitHub.",
-        link: "https://canchaya-jona-2026.web.app" 
+        desc: "Gestión de reservas deportivas en Firebase.",
+        link: "https://tu-link...",
+        imagen: "img/canchas.png"
     },
     { 
         nombre: "Calculadora Pro", 
-        desc: "Mi primera app en JS.",
-        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-nodo" 
+        desc: "Mi primera aplicación lógica en JS.",
+        link: "https://tu-link...",
+        imagen: "img/calculadora.png"
     }
 ];
 
+// Y actualizamos el renderizado para que dibuje la imagen:
 const contenedorProyectos = document.getElementById('lista-proyectos');
-
 if (contenedorProyectos) {
+    contenedorProyectos.innerHTML = ""; 
     misProyectos.forEach(proyecto => {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
+            <img src="${proyecto.imagen}" alt="${proyecto.nombre}" class="card-img">
             <h3>${proyecto.nombre}</h3>
             <p>${proyecto.desc}</p>
             <button onclick="window.open('${proyecto.link}', '_blank')">Ver Proyecto</button>
