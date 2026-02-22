@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore, collection, addDoc, query, onSnapshot, orderBy } 
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// 2. CONFIGURACIÓN (Asegúrate de que estos sean tus datos reales de la consola)
+// 2. CONFIGURACIÓN (Asegúrate de poner tus datos reales aquí)
 const firebaseConfig = {
     apiKey: "AIzaSyAVB0-j6cQGsf_IQX1iren8xwqtv4YaG-g",
     authDomain: "mi-foro-portafolio.firebaseapp.com",
@@ -13,7 +13,7 @@ const firebaseConfig = {
     appId: "1:988761302845:web:5dc36156b5a98773584754"
 };
 
-// Inicializar
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
@@ -31,11 +31,11 @@ window.enviarMensaje = async () => {
                 fecha: new Date()
             });
             document.getElementById('texto-mensaje').value = ""; 
-        } catch (e) {
-            console.error("Error al enviar: ", e);
+        } catch (error) {
+            console.error("Error al enviar:", error);
         }
     } else {
-        alert("Completa tu nombre y el mensaje.");
+        alert("Por favor rellena ambos campos");
     }
 };
 
@@ -54,7 +54,7 @@ onSnapshot(q, (snapshot) => {
     }
 });
 
-// --- SECCIÓN: TUS PROYECTOS (LISTA Y RENDERIZADO) ---
+// --- SECCIÓN: RENDERIZADO DE PROYECTOS ---
 
 const misProyectos = [
     { 
