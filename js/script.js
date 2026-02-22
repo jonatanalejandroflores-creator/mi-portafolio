@@ -63,6 +63,9 @@ onSnapshot(q, (snapshot) => {
 
 const misProyectos = [
 const misProyectos = [
+   // ... (código de Firebase arriba)
+
+const misProyectos = [
     { 
         nombre: "Traductor Inteligente", 
         desc: "App de traducción que ya migré a GitHub.",
@@ -78,6 +81,7 @@ const misProyectos = [
         desc: "Mi primera app en JS.",
         link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-nodo" 
     }
+]; 
 ];
 
 const contenedorProyectos = document.getElementById('lista-proyectos');
