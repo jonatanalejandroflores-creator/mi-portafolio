@@ -1,180 +1,162 @@
-:root {
-    --primary: #3b82f6;
-    --dark: #1f2937;
-    --light: #f3f4f6;
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: var(--light);
-    color: var(--dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Un gris muy suave tipo Facebook/LinkedIn */
+    color: #333;
+    line-height: 1.6;
 }
 
-header {
-    background: var(--dark);
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #1a202c;
 }
-/* --- DISEÑO DE LA CUADRÍCULA DE PROYECTOS --- */
 
+/* --- CUADRÍCULA DE PROYECTOS (GRID) --- */
 .grid-proyectos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* --- ESTILO DE LAS TARJETAS (CARDS) --- */
-
+/* --- TARJETAS DE PROYECTOS --- */
 .card {
     background: #ffffff;
     border-radius: 15px;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     border: 1px solid #e5e7eb;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* Efecto al pasar el mouse */
 .card:hover {
-    transform: translateY(-10px); /* Se eleva un poco */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
     border-color: #3b82f6;
 }
 
 .card h3 {
+    margin-bottom: 12px;
     color: #1f2937;
-    margin-bottom: 10px;
-    font-size: 1.25rem;
 }
 
 .card p {
     color: #6b7280;
     font-size: 0.95rem;
-    line-height: 1.5;
     margin-bottom: 20px;
 }
 
-/* Botón de la tarjeta */
 .card button {
-    background-color: #10b981; /* Un verde llamativo */
+    background-color: #10b981; /* Verde esmeralda */
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.3s ease;
 }
 
 .card button:hover {
     background-color: #059669;
 }
-/* --- ESTILOS DEL FORO --- */
 
+/* --- SECCIÓN DEL FORO --- */
 #foro {
+    max-width: 800px;
+    margin: 40px auto;
     background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 25px;
+    border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .caja-mensajes {
-    height: 300px; /* Altura fija para que no crezca infinito */
-    overflow-y: auto; /* Scroll automático */
+    height: 400px;
+    overflow-y: auto;
     border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 15px;
+    border-radius: 10px;
+    padding: 20px;
     margin-bottom: 20px;
     background-color: #f9fafb;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
-/* Estilo para cada mensaje individual */
+/* Burbujas de mensajes */
 .caja-mensajes p {
-    background: #e0f2fe;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 0;
-    width: fit-content;
-    max-width: 80%;
-    font-size: 0.9rem;
+    background: #e0f2fe; /* Azul clarito */
+    padding: 12px 16px;
+    border-radius: 15px;
     border-bottom-left-radius: 2px;
+    margin: 0;
+    max-width: 85%;
+    width: fit-content;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .caja-mensajes strong {
-    color: #0369a1;
     display: block;
-    font-size: 0.8rem;
-    margin-bottom: 2px;
+    font-size: 0.75rem;
+    color: #0369a1;
+    text-transform: uppercase;
+    margin-bottom: 4px;
 }
 
 /* Controles de entrada */
 .controles-foro {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
-.controles-foro input {
-    padding: 10px;
+.controles-foro input, .controles-foro textarea {
+    padding: 12px;
     border: 1px solid #d1d5db;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-family: inherit;
     outline: none;
 }
 
 .controles-foro input:focus {
     border-color: #3b82f6;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .controles-foro button {
     background-color: #3b82f6;
     color: white;
     border: none;
-    padding: 12px;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 14px;
+    border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
 .controles-foro button:hover {
     background-color: #2563eb;
 }
-/* Si el mensaje contiene el nombre 'jona', se ve distinto */
-.caja-mensajes p:has(strong:contains("jona")) {
-    background: #dcfce7; /* Verde clarito para vos */
-    border: 1px solid #10b981;
-    align-self: flex-end; /* Lo tira a la derecha como en WhatsApp */
-}
-/* Burbuja especial para el administrador (jona) */
-.caja-mensajes p {
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-}
 
-/* Si el mensaje es de jona, lo pintamos de verde y lo mandamos a la derecha */
-.caja-mensajes p:has(strong:contains("jona")) {
-    background-color: #dcfce7; /* Verde clarito */
-    align-self: flex-end;      /* Lo mueve a la derecha */
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 10px;
-    border: 1px solid #86efac;
+/* Scrollbar personalizada para el foro */
+.caja-mensajes::-webkit-scrollbar {
+    width: 6px;
 }
-
-/* Ajuste de color para el nombre del admin */
-.caja-mensajes p:has(strong:contains("jona")) strong {
-    color: #15803d;
+.caja-mensajes::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
 }
