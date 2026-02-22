@@ -20,17 +20,22 @@ const db = getFirestore(app);
 // --- SECCIÓN: LÓGICA DEL FORO ---
 
 window.enviarMensaje = async () => {
-    const user = document.getElementById('nombre-usuario').value;
-    const text = document.getElementById('texto-mensaje').value;
+    const inputNombre = document.getElementById('nombre-usuario');
+    const inputMensaje = document.getElementById('texto-mensaje');
 
-    if (user && text) {
+    const user = inputNombre.value;
+    const text = inputMensaje.value;
+
+    if (user.trim() && text.trim()) {
         try {
             await addDoc(collection(db, "mensajes"), {
                 usuario: user,
                 mensaje: text,
                 fecha: new Date()
             });
-            document.getElementById('texto-mensaje').value = ""; 
+            // FORMA INFALIBLE DE LIMPIAR:
+            inputMensaje.value = ""; 
+            inputMensaje.focus(); // Te deja el cursor listo para escribir otro
         } catch (error) {
             console.error("Error al enviar:", error);
         }

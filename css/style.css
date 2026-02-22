@@ -152,3 +152,9 @@ header {
 .controles-foro button:hover {
     background-color: #2563eb;
 }
+/* Si el mensaje contiene el nombre 'jona', se ve distinto */
+.caja-mensajes p:has(strong:contains("jona")) {
+    background: #dcfce7; /* Verde clarito para vos */
+    border: 1px solid #10b981;
+    align-self: flex-end; /* Lo tira a la derecha como en WhatsApp */
+}
