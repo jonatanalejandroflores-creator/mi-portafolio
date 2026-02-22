@@ -59,10 +59,24 @@ onSnapshot(q, (snapshot) => {
 
 // --- SECCIÓN: RENDERIZADO DE PROYECTOS ---
 
+// ... (código de Firebase arriba)
+
 const misProyectos = [
-    { nombre: "Traductor Inteligente", desc: "App de traducción que ya migré a GitHub." },
-    { nombre: "Canchas Ya", desc: "Gestión de reservas deportivas, ya en GitHub." },
-    { nombre: "Calculadora Pro", desc: "Mi primera app en JS." }
+    { 
+        nombre: "Traductor Inteligente", 
+        desc: "App de traducción que ya migré a GitHub.",
+        link: "https://github.com/jonatanalejandroflores-creator/TU-REPO-TRADUCTOR" // Pon el link real aquí
+    },
+    { 
+        nombre: "Canchas Ya", 
+        desc: "Gestión de reservas deportivas, ya en GitHub.",
+        link: "https://github.com/jonatanalejandroflores-creator/TU-REPO-CANCHAS" // Pon el link real aquí
+    },
+    { 
+        nombre: "Calculadora Pro", 
+        desc: "Mi primera app en JS.",
+        link: "https://github.com/jonatanalejandroflores-creator/TU-REPO-CALCULADORA" // Pon el link real aquí
+    }
 ];
 
 const contenedorProyectos = document.getElementById('lista-proyectos');
@@ -74,7 +88,7 @@ if (contenedorProyectos) {
         card.innerHTML = `
             <h3>${proyecto.nombre}</h3>
             <p>${proyecto.desc}</p>
-            <button onclick="alert('Lanzando ${proyecto.nombre}...')">Ver más</button>
+            <button onclick="window.open('${proyecto.link}', '_blank')">Ver Proyecto</button>
         `;
         contenedorProyectos.appendChild(card);
     });
