@@ -62,20 +62,21 @@ onSnapshot(q, (snapshot) => {
 // ... (código de Firebase arriba)
 
 const misProyectos = [
+const misProyectos = [
     { 
         nombre: "Traductor Inteligente", 
         desc: "App de traducción que ya migré a GitHub.",
-        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-modo" 
+        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-nodo" 
     },
     { 
         nombre: "Canchas Ya", 
         desc: "Gestión de reservas deportivas, ya en GitHub.",
-        link: "https://canchaya-jona-2026.web.app", "https://canchaya-jona-2026.web.app/admin.html" 
+        link: "https://canchaya-jona-2026.web.app" 
     },
     { 
         nombre: "Calculadora Pro", 
         desc: "Mi primera app en JS.",
-        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-modo"
+        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-nodo" 
     }
 ];
 
