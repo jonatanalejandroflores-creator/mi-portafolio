@@ -19,6 +19,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+/* --- DISEÑO DE LA CUADRÍCULA DE PROYECTOS --- */
 
 .grid-proyectos {
     display: grid;
@@ -27,11 +28,54 @@ header {
     padding: 20px;
 }
 
+/* --- ESTILO DE LAS TARJETAS (CARDS) --- */
+
 .card {
-    background: white;
-    padding: 15px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efecto al pasar el mouse */
+.card:hover {
+    transform: translateY(-10px); /* Se eleva un poco */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+}
+
+.card h3 {
+    color: #1f2937;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.card p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Botón de la tarjeta */
+.card button {
+    background-color: #10b981; /* Un verde llamativo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card button:hover {
+    background-color: #059669;
 }
 /* --- ESTILOS DEL FORO --- */
 
