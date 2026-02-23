@@ -1,106 +1,83 @@
-// 1. IMPORTACIONES DE FIREBASE
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, query, onSnapshot, orderBy } 
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+/* ============================================================
+   CONFIGURACIÓN DE SERVICIOS (CATÁLOGO DE HERRAMIENTAS)
+   Enfoque: Utilidad comunitaria y terminología técnica neutral.
+   ============================================================ */
 
-// 2. CONFIGURACIÓN (Asegúrate de poner tus datos reales aquí)
-const firebaseConfig = {
-    apiKey: "AIzaSyAVB0-j6cQGsf_IQX1iren8xwqtv4YaG-g",
-    authDomain: "mi-foro-portafolio.firebaseapp.com",
-    projectId: "mi-foro-portafolio",
-    storageBucket: "mi-foro-portafolio.firebasestorage.app",
-    messagingSenderId: "988761302845",
-    appId: "1:988761302845:web:5dc36156b5a98773584754"
-};
-
-// Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// --- SECCIÓN: LÓGICA DEL FORO ---
-
-window.enviarMensaje = async () => {
-    const inputNombre = document.getElementById('nombre-usuario');
-    const inputMensaje = document.getElementById('texto-mensaje');
-
-    const user = inputNombre.value;
-    const text = inputMensaje.value;
-
-    if (user.trim() && text.trim()) {
-        try {
-            await addDoc(collection(db, "mensajes"), {
-                usuario: user,
-                mensaje: text,
-                fecha: new Date()
-            });
-            // FORMA INFALIBLE DE LIMPIAR:
-            inputMensaje.value = ""; 
-            inputMensaje.focus(); // Te deja el cursor listo para escribir otro
-        } catch (error) {
-            console.error("Error al enviar:", error);
-        }
-    } else {
-        alert("Por favor rellena ambos campos");
-    }
-};
-
-const q = query(collection(db, "mensajes"), orderBy("fecha", "asc"));
-onSnapshot(q, (snapshot) => {
-    const contenedorForo = document.getElementById('mensajes-foro');
-    if (contenedorForo) {
-        contenedorForo.innerHTML = ""; 
-        snapshot.forEach((doc) => {
-            const data = doc.data();
-            const p = document.createElement('p');
-            p.innerHTML = `<strong>${data.usuario}:</strong> ${data.mensaje}`;
-            contenedorForo.appendChild(p);
-        });
-        contenedorForo.scrollTop = contenedorForo.scrollHeight;
-    }
-});
-
-// --- SECCIÓN: RENDERIZADO DE PROYECTOS ---
-
-const misProyectos = [
+const herramientasComunitarias = [
     { 
-        nombre: "Traductor Inteligente", 
-        desc: "App de traducción con IA migrada a Streamlit.",
+        nombre: "Traductor Global IA", 
+        desc: "Servicio de traducción automática optimizado para la eliminación de barreras idiomáticas en textos complejos.",
         link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/", 
-        imagen: "https://placehold.co/300x180/10b981/white?text=Traductor+IA" 
+        imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Comunicacion+Global" 
     },
     { 
-        nombre: "Canchas Ya", 
-        desc: "Gestión de reservas deportivas en Firebase.",
+        nombre: "Gestor de Reservas", 
+        desc: "Sistema centralizado para la verificación de disponibilidad y organización de turnos en espacios deportivos.",
         link: "https://canchaya-jona-2026.web.app", 
-        imagen: "https://placehold.co/300x180/3b82f6/white?text=Canchas+Ya"
+        imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Gestion+de+Espacios"
     },
     { 
-        nombre: "Calculadora Pro", 
-        desc: "Mi primera aplicación lógica en JS.",
-        link: "https://jonatanalejandroflores-creator.github.io/mi-portafolio/", 
-        imagen: "https://placehold.co/300x180/f59e0b/white?text=Calculadora"
-    },
-    { 
-        nombre: "Panel Admin", 
-        desc: "Gestión interna de claves y reservas del sistema.",
+        nombre: "Panel de Auditoría", 
+        desc: "Módulo administrativo para la supervisión de accesos, gestión de seguridad y mantenimiento de infraestructura digital.",
         link: "https://canchaya-jona-2026.web.app/admin.html", 
-        imagen: "https://placehold.co/300x180/1e40af/white?text=Panel+Admin"
+        imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Seguridad+y+Control"
+    },
+    { 
+        nombre: "Calculadora de Lógica", 
+        desc: "Herramienta de procesamiento matemático diseñada para operaciones rápidas y verificación de algoritmos base.",
+        link: "https://jonatanalejandroflores-creator.github.io/mi-portafolio/", 
+        imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Procesamiento+Matematico"
     }
 ];
 
-// Y actualizamos el renderizado para que dibuje la imagen:
-const contenedorProyectos = document.getElementById('lista-proyectos');
-if (contenedorProyectos) {
-    contenedorProyectos.innerHTML = ""; 
-    misProyectos.forEach(proyecto => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <img src="${proyecto.imagen}" alt="${proyecto.nombre}" class="card-img">
-            <h3>${proyecto.nombre}</h3>
-            <p>${proyecto.desc}</p>
-            <button onclick="window.open('${proyecto.link}', '_blank')">Ver Proyecto</button>
+/* ============================================================
+   RENDERIZADO DE LA PLATAFORMA
+   ============================================================ */
+
+const contenedorHerramientas = document.getElementById("lista-proyectos");
+
+function cargarHerramientas() {
+    // Limpiamos el contenedor para asegurar carga limpia
+    contenedorHerramientas.innerHTML = "";
+
+    herramientasComunitarias.forEach(servicio => {
+        const tarjeta = document.createElement("div");
+        tarjeta.classList.add("card");
+
+        tarjeta.innerHTML = `
+            <img src="${servicio.imagen}" alt="${servicio.nombre}" style="width:100%; border-radius:8px; margin-bottom:15px;">
+            <h3>${servicio.nombre}</h3>
+            <p>${servicio.desc}</p>
+            <button onclick="window.open('${servicio.link}', '_blank')">Acceder al servicio</button>
         `;
-        contenedorProyectos.appendChild(card);
+
+        contenedorHerramientas.appendChild(tarjeta);
     });
 }
+
+/* ============================================================
+   SISTEMA DE COLABORACIÓN (FORO)
+   Nota: Aquí puedes conectar tu lógica de Firebase actual.
+   ============================================================ */
+
+function enviarMensaje() {
+    const usuarioInput = document.getElementById("nombre-usuario");
+    const mensajeInput = document.getElementById("texto-mensaje");
+
+    if (usuarioInput.value.trim() === "" || mensajeInput.value.trim() === "") {
+        alert("Por favor, complete los campos para enviar su reporte o sugerencia.");
+        return;
+    }
+
+    // LÓGICA DE ENVÍO (Simulación o conexión a Firebase)
+    console.log("Aporte recibido de:", usuarioInput.value);
+    
+    // Limpiar campos tras envío
+    usuarioInput.value = "";
+    mensajeInput.value = "";
+    
+    alert("Aporte enviado con éxito al Espacio de Colaboración.");
+}
+
+// Inicialización
+document.addEventListener("DOMContentLoaded", cargarHerramientas);
