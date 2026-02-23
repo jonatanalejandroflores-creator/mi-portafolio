@@ -65,19 +65,19 @@ const misProyectos = [
     { 
         nombre: "Traductor Inteligente", 
         desc: "App de traducción con IA migrada a Streamlit.",
-        link: "https://tu-link...", 
+        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-modo", 
         imagen: "img/traductor.png" // <--- Agregamos esto
     },
     { 
         nombre: "Canchas Ya", 
         desc: "Gestión de reservas deportivas en Firebase.",
-        link: "https://tu-link...",
+        link: "https://canchaya-jona-2026.web.app/admin.html",
         imagen: "img/canchas.png"
     },
     { 
         nombre: "Calculadora Pro", 
         desc: "Mi primera aplicación lógica en JS.",
-        link: "https://tu-link...",
+        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/#traductor-pro-multi-modo",
         imagen: "img/calculadora.png"
     }
 ];
