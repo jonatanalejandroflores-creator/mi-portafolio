@@ -82,9 +82,9 @@ const misProyectos = [
     },
     { 
         nombre: "Panel Admin", 
-        desc: "Gestión de claves y reservas del sistema.",
+        desc: "Gestión interna de claves y reservas del sistema.",
         link: "https://canchaya-jona-2026.web.app/admin.html", 
-        imagen: "https://via.placeholder.com/300x180/6366f1/ffffff?text=Panel+Admin"
+        imagen: "https://via.placeholder.com/300x180/1e40af/ffffff?text=Panel+Admin"
     }
 ];
 
