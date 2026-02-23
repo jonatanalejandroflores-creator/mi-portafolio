@@ -1,37 +1,47 @@
-<header>
-    <h1>Community Tech Hub</h1>
-    <p>Infraestructura digital abierta al servicio del usuario.</p>
-</header>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Tech Hub | Herramientas Abiertas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="https://placehold.co/32x32/0f172a/white?text=C">
+</head>
+<body>
 
-<main>
-    <section id="herramientas">
-        <h2>Catálogo de Servicios</h2>
-        <div class="grid-proyectos">
-            <div class="card">
-                <h3>Traducción Asistida</h3>
-                <p>Herramienta simple para traducir textos a múltiples idiomas mediante inteligencia artificial.</p>
-                <button>Acceder al servicio</button>
-            </div>
+    <header>
+        <h1>Community Tech Hub</h1>
+        <p>Plataforma de servicios digitales diseñados para facilitar la comunicación y la gestión comunitaria de forma gratuita.</p>
+    </header>
+
+    <main>
+        <section id="servicios">
+            <div class="grid-proyectos" id="lista-proyectos">
+                </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid #e2e8f0; max-width: 1000px; margin: 0 auto;">
+
+        <section id="foro">
+            <h2>Espacio de Colaboración</h2>
+            <p class="intro-foro">Canal abierto para el reporte de fallos, sugerencias de nuevas funciones o consultas generales sobre las herramientas.</p>
             
-            <div class="card">
-                <h3>Reserva de Canchas</h3>
-                <p>Sistema práctico para consultar disponibilidad y gestionar turnos deportivos en tiempo real.</p>
-                <button>Organizar turno</button>
+            <div id="mensajes-foro" class="caja-mensajes">
+                </div>
+
+            <div class="controles-foro">
+                <input type="text" id="nombre-usuario" placeholder="Nombre o Institución" required>
+                <textarea id="texto-mensaje" rows="4" placeholder="Escriba su consulta o sugerencia aquí..." required></textarea>
+                <button onclick="enviarMensaje()">Enviar Aporte</button>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="colaboracion">
-        <h2>Mejora Continua</h2>
-        <p>Este espacio es para que la comunidad reporte fallos o sugiera funciones nuevas.</p>
-        <div id="mensajes-foro"></div>
-    </section>
-</main>
+    <footer>
+        <p>Infraestructura desarrollada para el <strong>Acceso Tecnológico Libre</strong> &copy; 2026</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">El código de estas herramientas es abierto para la mejora continua de la comunidad.</p>
+    </footer>
 
-<footer>
-    <p>Proyecto fundado para el acceso libre a la tecnología. 2026.</p>
-</footer>
-
-    <script type="module" src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
