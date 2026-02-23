@@ -172,3 +172,12 @@ header p {
         transform: translateY(0);
     }
 }
+
+/* Estilo especial para la última tarjeta si es Admin */
+.card:last-child {
+    border-top: 5px solid #3b82f6; /* Azul para el Admin */
+}
+
+.card:last-child button {
+    background-color: #1e40af; /* Botón azul oscuro */
+}
