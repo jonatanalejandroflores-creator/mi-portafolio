@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Hub de Proyectos</title>
-    <link <link rel="stylesheet" href="css/style.css">
+    <title>Jonatan Alejandro Flores | Portafolio Dev</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header>
-        <h1>Mi Portafolio Dev</h1>
+        <h1>Jonatan Alejandro Flores</h1>
+        <p>Desarrollador Full-Stack & Creador de Soluciones Tecnológicas</p>
         <nav>
             <ul>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#foro">Foro</a></li>
+                <li><a href="#proyectos" style="color: #10b981; text-decoration: none; font-weight: bold; margin: 0 10px;">Proyectos</a></li>
+                <li><a href="#foro" style="color: #10b981; text-decoration: none; font-weight: bold; margin: 0 10px;">Foro</a></li>
             </ul>
         </nav>
     </header>
@@ -24,20 +26,24 @@
                 </div>
         </section>
 
-        <hr>
+        <hr style="border: 0; height: 1px; background: #e2e8f0; margin: 40px 0;">
 
         <section id="foro">
             <h2>Foro de la Comunidad</h2>
             <div id="mensajes-foro" class="caja-mensajes">
                 </div>
-            
+
             <div class="controles-foro">
-                <input type="text" id="nombre-usuario" placeholder="Tu nombre">
-                <input type="text" id="texto-mensaje" placeholder="Escribe un mensaje...">
-                <button onclick="enviarMensaje()">Enviar</button>
+                <input type="text" id="nombre-usuario" placeholder="Tu nombre" required>
+                <textarea id="texto-mensaje" placeholder="Escribe un mensaje..." rows="3" required></textarea>
+                <button onclick="enviarMensaje()">Enviar Mensaje</button>
             </div>
         </section>
     </main>
+
+    <footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem;">
+        <p>&copy; 2026 - Jonatan Alejandro Flores. Desarrollado con HTML, CSS, JS y Firebase.</p>
+    </footer>
 
     <script type="module" src="js/script.js"></script>
 </body>
