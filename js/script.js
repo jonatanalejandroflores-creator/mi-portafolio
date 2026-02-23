@@ -66,25 +66,25 @@ const misProyectos = [
         nombre: "Traductor Inteligente", 
         desc: "App de traducción con IA migrada a Streamlit.",
         link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/", 
-        imagen: "https://via.placeholder.com/300x180/10b981/ffffff?text=Traductor+IA" 
+        imagen: "https://placehold.co/300x180/10b981/white?text=Traductor+IA" 
     },
     { 
         nombre: "Canchas Ya", 
         desc: "Gestión de reservas deportivas en Firebase.",
         link: "https://canchaya-jona-2026.web.app", 
-        imagen: "https://via.placeholder.com/300x180/3b82f6/ffffff?text=Canchas+Ya"
+        imagen: "https://placehold.co/300x180/3b82f6/white?text=Canchas+Ya"
     },
     { 
         nombre: "Calculadora Pro", 
         desc: "Mi primera aplicación lógica en JS.",
         link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app", 
-        imagen: "https://via.placeholder.com/300x180/f59e0b/ffffff?text=Calculadora"
+        imagen: "https://placehold.co/300x180/f59e0b/white?text=Calculadora"
     },
     { 
         nombre: "Panel Admin", 
         desc: "Gestión interna de claves y reservas del sistema.",
         link: "https://canchaya-jona-2026.web.app/admin.html", 
-        imagen: "https://via.placeholder.com/300x180/1e40af/ffffff?text=Panel+Admin"
+        imagen: "https://placehold.co/300x180/1e40af/white?text=Panel+Admin"
     }
 ];
 
