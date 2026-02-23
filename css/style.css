@@ -38,18 +38,21 @@ header {
 }
 
 header h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--texto-titulo);
-    letter-spacing: -0.05em;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -2px;
+    line-height: 1.1;
     margin-bottom: 15px;
+    text-tranform: uppercase;
 }
 
 header p {
-    font-size: 1.2rem;
-    color: var(--texto-suave);
-    max-width: 700px;
+    font-size: 1.3rem;
+    color: #475569;
+    max-width: 800px;
     margin: 0 auto;
+    font-weight: 400;	
 }
 
 /* =========================================
@@ -107,20 +110,20 @@ header p {
 
 /* Botones de Acción Directa */
 .card button {
-    background-color: var(--texto-titulo);
-    color: white;
+    background-color: #2563eb;
+    color: blue;
     border: none;
     padding: 14px 24px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: background 0.2s;
     width: 100%;
 }
 
 .card button:hover {
-    background-color: var(--primario);
+    background-color: #1d4ed8;
 }
 
 /* =========================================
