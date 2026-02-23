@@ -1,49 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonatan Alejandro Flores | Portafolio Dev</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<header>
+    <h1>Community Tech Hub</h1>
+    <p>Infraestructura digital abierta al servicio del usuario.</p>
+</header>
 
-    <header>
-        <h1>Jonatan Alejandro Flores</h1>
-        <p>Desarrollador Full-Stack & Creador de Soluciones Tecnológicas</p>
-        <nav>
-            <ul>
-                <li><a href="#proyectos" style="color: #10b981; text-decoration: none; font-weight: bold; margin: 0 10px;">Proyectos</a></li>
-                <li><a href="#foro" style="color: #10b981; text-decoration: none; font-weight: bold; margin: 0 10px;">Foro</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="proyectos">
-            <h2>Mis Aplicaciones</h2>
-            <div class="grid-proyectos" id="lista-proyectos">
-                </div>
-        </section>
-
-        <hr style="border: 0; height: 1px; background: #e2e8f0; margin: 40px 0;">
-
-        <section id="foro">
-            <h2>Foro de la Comunidad</h2>
-            <div id="mensajes-foro" class="caja-mensajes">
-                </div>
-
-            <div class="controles-foro">
-                <input type="text" id="nombre-usuario" placeholder="Tu nombre" required>
-                <textarea id="texto-mensaje" placeholder="Escribe un mensaje..." rows="3" required></textarea>
-                <button onclick="enviarMensaje()">Enviar Mensaje</button>
+<main>
+    <section id="herramientas">
+        <h2>Catálogo de Servicios</h2>
+        <div class="grid-proyectos">
+            <div class="card">
+                <h3>Traducción Asistida</h3>
+                <p>Herramienta simple para traducir textos a múltiples idiomas mediante inteligencia artificial.</p>
+                <button>Acceder al servicio</button>
             </div>
-        </section>
-    </main>
+            
+            <div class="card">
+                <h3>Reserva de Canchas</h3>
+                <p>Sistema práctico para consultar disponibilidad y gestionar turnos deportivos en tiempo real.</p>
+                <button>Organizar turno</button>
+            </div>
+        </div>
+    </section>
 
-    <footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem;">
-        <p>&copy; 2026 - Jonatan Alejandro Flores. Desarrollado con HTML, CSS, JS y Firebase.</p>
-    </footer>
+    <section id="colaboracion">
+        <h2>Mejora Continua</h2>
+        <p>Este espacio es para que la comunidad reporte fallos o sugiera funciones nuevas.</p>
+        <div id="mensajes-foro"></div>
+    </section>
+</main>
+
+<footer>
+    <p>Proyecto fundado para el acceso libre a la tecnología. 2026.</p>
+</footer>
 
     <script type="module" src="js/script.js"></script>
 </body>
