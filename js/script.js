@@ -77,7 +77,7 @@ const misProyectos = [
     { 
         nombre: "Calculadora Pro", 
         desc: "Mi primera aplicación lógica en JS.",
-        link: "https://jonatanalejandroflores-creator.github.io/mi-portafolio/", 
+        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app", 
         imagen: "https://via.placeholder.com/300x180/f59e0b/ffffff?text=Calculadora"
     },
     { 
