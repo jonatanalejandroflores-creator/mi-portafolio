@@ -17,15 +17,15 @@ const herramientasComunitarias = [
         imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Gestion+de+Espacios"
     },
     { 
-        nombre: "Panel de Auditoría", 
-        desc: "Módulo administrativo para la supervisión de accesos, gestión de seguridad y mantenimiento de infraestructura digital.",
+        nombre: "Panel Admin", 
+        desc: "Módulo administrativo para la supervisión de reservas, dueños de complejos deportivos.",
         link: "https://canchaya-jona-2026.web.app/admin.html", 
-        imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Seguridad+y+Control"
+        imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Reservas+y+Control"
     },
     { 
         nombre: "Calculadora de Lógica", 
         desc: "Herramienta de procesamiento matemático diseñada para operaciones rápidas y verificación de algoritmos base.",
-        link: "https://jonatanalejandroflores-creator.github.io/mi-portafolio/", 
+        link: "https://traductoria-arvwgti6ebkthv3jd95sjp.streamlit.app/", 
         imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Procesamiento+Matematico"
     }
 ];
