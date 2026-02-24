@@ -11,7 +11,7 @@ const herramientasComunitarias = [
         imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Comunicacion+Global" 
     },
     { 
-        nombre: "Gestor de Reservas", 
+        nombre: "Reservas de Jugadores", 
         desc: "Sistema centralizado para la verificación de disponibilidad y organización de turnos en espacios deportivos.",
         link: "https://canchaya-jona-2026.web.app", 
         imagen: "https://placehold.co/300x180/f8fafc/64748b?text=Gestion+de+Espacios"
