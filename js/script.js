@@ -61,23 +61,41 @@ function cargarHerramientas() {
    ============================================================ */
 
 function enviarMensaje() {
-    const usuarioInput = document.getElementById("nombre-usuario");
-    const mensajeInput = document.getElementById("texto-mensaje");
+    const usuarioInput = document.getElementById('nombre-usuario');
+    const mensajeInput = document.getElementById('texto-mensaje');
+    const cajaMensajes = document.getElementById('mensajes-foro');
 
-    if (usuarioInput.value.trim() === "" || mensajeInput.value.trim() === "") {
-        alert("Por favor, complete los campos para enviar su reporte o sugerencia.");
+    const nombre = usuarioInput.value.trim() || "ANÓNIMO";
+    const mensaje = mensajeInput.value.trim();
+
+    if (mensaje === "") {
+        alert("Por favor, escriba un mensaje antes de enviar.");
         return;
     }
 
-    // LÓGICA DE ENVÍO (Simulación o conexión a Firebase)
-    console.log("Aporte recibido de:", usuarioInput.value);
-    
-    // Limpiar campos tras envío
+    // Estampa de tiempo
+    const ahora = new Date();
+    const horaStr = ahora.getHours() + ":" + ahora.getMinutes().toString().padStart(2, '0');
+
+    // Crear elemento de mensaje estilo Terminal
+    const nuevoMensaje = document.createElement('p');
+    nuevoMensaje.style.borderBottom = "1px solid rgba(180, 0, 255, 0.2)";
+    nuevoMensaje.style.padding = "5px";
+    nuevoMensaje.style.margin = "5px 0";
+
+    nuevoMensaje.innerHTML = `
+        <span style="color: var(--neon-orange)">[${horaStr}]</span> 
+        <span style="color: var(--neon-cyan)">${nombre.toUpperCase()}:</span> 
+        <span style="color: #fff">${mensaje}</span>
+    `;
+
+    // Agregar a la pantalla y scroll automático
+    cajaMensajes.appendChild(nuevoMensaje);
+    cajaMensajes.scrollTop = cajaMensajes.scrollHeight;
+
+    // Limpiar campos
     usuarioInput.value = "";
     mensajeInput.value = "";
-    
-    alert("Aporte enviado con éxito al Espacio de Colaboración.");
-}
 
-// Inicialización
-document.addEventListener("DOMContentLoaded", cargarHerramientas);
+    console.log("Aporte recibido de: " + nombre);
+}
