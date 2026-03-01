@@ -63,39 +63,45 @@ function cargarHerramientas() {
 function enviarMensaje() {
     const usuarioInput = document.getElementById('nombre-usuario');
     const mensajeInput = document.getElementById('texto-mensaje');
-    const cajaMensajes = document.getElementById('mensajes-foro');
+    const cajaMensajes = document.getElementById('mensajes-foro'); // <--- ESTE ES EL CLAVE
+
+    // Si la caja no existe, avisar por consola
+    if (!cajaMensajes) {
+        console.error("ERROR: No se encontró la caja con id 'mensajes-foro'");
+        return;
+    }
 
     const nombre = usuarioInput.value.trim() || "ANÓNIMO";
     const mensaje = mensajeInput.value.trim();
 
     if (mensaje === "") {
-        alert("Por favor, escriba un mensaje antes de enviar.");
+        alert("Por favor, escriba un mensaje.");
         return;
     }
 
-    // Estampa de tiempo
     const ahora = new Date();
     const horaStr = ahora.getHours() + ":" + ahora.getMinutes().toString().padStart(2, '0');
 
-    // Crear elemento de mensaje estilo Terminal
-    const nuevoMensaje = document.createElement('p');
-    nuevoMensaje.style.borderBottom = "1px solid rgba(180, 0, 255, 0.2)";
-    nuevoMensaje.style.padding = "5px";
-    nuevoMensaje.style.margin = "5px 0";
-
-    nuevoMensaje.innerHTML = `
+    // Creamos el párrafo del mensaje
+    const nuevoElemento = document.createElement('p');
+    nuevoElemento.style.color = "#fff";
+    nuevoElemento.style.margin = "8px 0";
+    nuevoElemento.style.fontSize = "0.9rem";
+    nuevoElemento.style.borderBottom = "1px solid rgba(180, 0, 255, 0.3)";
+    
+    nuevoElemento.innerHTML = `
         <span style="color: var(--neon-orange)">[${horaStr}]</span> 
         <span style="color: var(--neon-cyan)">${nombre.toUpperCase()}:</span> 
-        <span style="color: #fff">${mensaje}</span>
+        ${mensaje}
     `;
 
-    // Agregar a la pantalla y scroll automático
-    cajaMensajes.appendChild(nuevoMensaje);
+    // Lo metemos en la caja
+    cajaMensajes.appendChild(nuevoElemento);
+    
+    // Scroll automático al último mensaje
     cajaMensajes.scrollTop = cajaMensajes.scrollHeight;
 
-    // Limpiar campos
+    // Limpiamos los campos
     usuarioInput.value = "";
     mensajeInput.value = "";
-
-    console.log("Aporte recibido de: " + nombre);
 }
