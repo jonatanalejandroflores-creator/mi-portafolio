@@ -32,11 +32,11 @@ onSnapshot(q, (snapshot) => {
     snapshot.docs.forEach(doc => {
         const data = doc.data();
         const p = document.createElement('p');
-        p.style.fontSize = "1.05rem";
-        p.style.lineHeight = "1.5";
-        p.style.margin = "10px 0"
-        p.style.padding = "6px 10px";
-        p.style.letterSpacing = "0.5px";
+        p.style.fontSize = "1.2rem";
+        p.style.lineHeight = "1.6";
+        p.style.margin = "12px 0"
+        p.style.padding = "8px 12px";
+        p.style.letterSpacing = "0.8px";
         p.style.borderBottom = "2px solid rgba(0, 255, 255, 0.1)";
         
         // AGREGÁ "const" AL PRINCIPIO DE ESTAS DOS LÍNEAS:
