@@ -32,10 +32,12 @@ onSnapshot(q, (snapshot) => {
     snapshot.docs.forEach(doc => {
         const data = doc.data();
         const p = document.createElement('p');
-        p.style.fontSize = "0.95rem";
-        p.style.lineHeight = "1.4";
-        p.style.padding = "4px 8px";
-        p.style.borderBottom = "1px solid rgba(0, 255, 255, 0.1)";
+        p.style.fontSize = "1.05rem";
+        p.style.lineHeight = "1.5";
+        p.style.margin = "10px 0"
+        p.style.padding = "6px 10px";
+        p.style.letterSpacing = "0.5px";
+        p.style.borderBottom = "2px solid rgba(0, 255, 255, 0.1)";
         
         // AGREGÁ "const" AL PRINCIPIO DE ESTAS DOS LÍNEAS:
         const fecha = data.fecha ? data.fecha.toDate() : new Date();
