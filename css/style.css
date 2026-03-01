@@ -16,8 +16,8 @@ body {
         linear-gradient(90deg, transparent 0%, rgba(157, 0, 255, 0.05) 2%, transparent 5%);
     background-size: 50px 50px;
     color: var(--texto);
-    font-family: 'VT323', monospace;
-    font-size: 1.2rem; 
+    font-family: 'VT323', monospace !important;
+    font-size: 1.3rem; 
     margin: 0;
     overflow-x: hidden;
 }
