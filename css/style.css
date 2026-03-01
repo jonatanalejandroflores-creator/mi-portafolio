@@ -16,7 +16,8 @@ body {
         linear-gradient(90deg, transparent 0%, rgba(157, 0, 255, 0.05) 2%, transparent 5%);
     background-size: 50px 50px;
     color: var(--texto);
-    font-family: var(--fuente-retro);
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem; 
     margin: 0;
     overflow-x: hidden;
 }
@@ -144,7 +145,8 @@ header p {
     padding: 10px;
     color: #3fb950; /* Verde fósforo clásico de monitor viejo */
     font-size: 0.9rem;
-    text-shadow: 0 0 5px rgba(63, 185, 80, 0.5);
+    text-shadow: 0 0 8px rgba(63, 185, 80, 0.7);
+    letter-spacing: 1px; 
 }
 
 /* BOTÓN DE ENVÍO FORO */
