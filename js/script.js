@@ -34,13 +34,15 @@ onSnapshot(q, (snapshot) => {
         const p = document.createElement('p');
         p.style.fontSize = "0.85rem";
         p.style.padding = "2px 5px";
-        p.style.borderBottom = "1px solid rgba(0, 255, 255, 0.1)"; // Una línea divisoria sutil
+        p.style.borderBottom = "1px solid rgba(0, 255, 255, 0.1)";
+        
+        // AGREGÁ "const" AL PRINCIPIO DE ESTAS DOS LÍNEAS:
         const fecha = data.fecha ? data.fecha.toDate() : new Date();
         const hora = fecha.getHours().toString().padStart(2, '0') + ":" + fecha.getMinutes().toString().padStart(2, '0');
+
         p.innerHTML = `
-            p.innerHTML = `
             <span style="color: #555;">[${hora}]</span> 
-            <span style="color: var(--neon-orange); font-weight: bold;">[${data.nombre.toUpperCase()}]:</span> 
+            <span style="color: var(--neon-orange); font-weight: bold;">${data.nombre.toUpperCase()}:</span> 
             <span style="color: #eee;">${data.mensaje}</span>
         `;
         caja.appendChild(p);
