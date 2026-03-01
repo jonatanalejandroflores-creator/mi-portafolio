@@ -40,9 +40,12 @@ onSnapshot(q, (snapshot) => {
         const fecha = data.fecha ? data.fecha.toDate() : new Date();
         const hora = fecha.getHours().toString().padStart(2, '0') + ":" + fecha.getMinutes().toString().padStart(2, '0');
 
+        // Usamos una variable segura para el nombre
+        const nombreSeguro = (data.nombre || "Anónimo").toUpperCase();
+
         p.innerHTML = `
             <span style="color: #555;">[${hora}]</span> 
-            <span style="color: var(--neon-orange); font-weight: bold;">${data.nombre.toUpperCase()}:</span> 
+            <span style="color: var(--neon-orange); font-weight: bold;">[${nombreSeguro}]:</span> 
             <span style="color: #eee;">${data.mensaje}</span>
         `;
         caja.appendChild(p);
