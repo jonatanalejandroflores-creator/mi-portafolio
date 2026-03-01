@@ -1,6 +1,16 @@
 // 1. IMPORTACIONES (Asegúrate de que la ruta a tu config sea correcta)
+// 1. IMPORTACIONES (Usa estas URLs exactas para evitar errores de carga)
 import { db } from './firebase-config.js'; 
-import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { 
+    collection, 
+    addDoc, 
+    query, 
+    orderBy, 
+    onSnapshot, 
+    serverTimestamp 
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const colRef = collection(db, 'mensajes');
 
 // --- CATÁLOGO DE HERRAMIENTAS ---
 const herramientasComunitarias = [
