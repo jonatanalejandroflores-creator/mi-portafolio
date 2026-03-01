@@ -35,9 +35,11 @@ onSnapshot(q, (snapshot) => {
         p.style.fontSize = "0.85rem";
         p.style.padding = "2px 5px";
         p.style.borderBottom = "1px solid rgba(0, 255, 255, 0.1)"; // Una línea divisoria sutil
-        
+        const fecha = data.fecha ? data.fecha.toDate() : new Date();
+        const hora = fecha.getHours().toString().padStart(2, '0') + ":" + fecha.getMinutes().toString().padStart(2, '0');
         p.innerHTML = `
-            <span style="color: #555;">></span> 
+            p.innerHTML = `
+            <span style="color: #555;">[${hora}]</span> 
             <span style="color: var(--neon-orange); font-weight: bold;">[${data.nombre.toUpperCase()}]:</span> 
             <span style="color: #eee;">${data.mensaje}</span>
         `;
