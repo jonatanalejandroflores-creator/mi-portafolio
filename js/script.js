@@ -1,5 +1,4 @@
-// 1. IMPORTACIONES (Asegúrate de que la ruta a tu config sea correcta)
-// 1. IMPORTACIONES (Usa estas URLs exactas para evitar errores de carga)
+// 1. IMPORTACIONES
 import { db } from './firebase-config.js'; 
 import { 
     collection, 
