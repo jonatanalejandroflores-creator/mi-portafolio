@@ -17,27 +17,44 @@
 
     <main>
         <section id="servicios">
-            <div class="visual-app gestion-espacios">
-    <span>[ █ █ ░ █ ]</span>
-    <small>MAPA DE ACCESO</small>
+        <div class="grid-proyectos">
+
+    <div class="card">
+        <div class="card-visual">
+            [ █ █ ░ █ ]
+        </div>
+        <div class="card-body">
+            <h3>Gestión de Espacios</h3>
+            <p>Control de disponibilidad y asignación de puestos en tiempo real.</p>
+            <button onclick="window.location.href='#'">EJECUTAR_SISTEMA</button>
+        </div>
+    </div>
+
+    <div class="card" style="border-color: #3fb950 !important;">
+        <div class="card-visual" style="color: #3fb950; text-shadow: 0 0 10px #3fb950;">
+            [ % + = $ ]
+        </div>
+        <div class="card-body">
+            <h3 style="color: #3fb950 !important;">Calculadora</h3>
+            <p>Procesador de algoritmos para el cálculo de presupuestos y costos.</p>
+            <button style="border-color: #3fb950 !important; color: #3fb950 !important;">INICIAR_CÁLCULO</button>
+        </div>
+    </div>
+
+    <div class="card" style="border-color: #ff8c00 !important;">
+        <div class="card-visual" style="color: #ff8c00; text-shadow: 0 0 10px #ff8c00;">
+            [ A > 文 ]
+        </div>
+        <div class="card-body">
+            <h3 style="color: #ff8c00 !important;">Traductor</h3>
+            <p>Decodificador universal de protocolos de lenguaje y comunicación.</p>
+            <button style="border-color: #ff8c00 !important; color: #ff8c00 !important;">ACCEDER_PROTOCOLO</button>
+        </div>
+    </div>
+
 </div>
-        </section>
 
-        <hr style="border: 0; border-top: 1px solid #e2e8f0; max-width: 1000px; margin: 0 auto;">
-
-        <section id="foro">
-            <h2>Espacio de Colaboración</h2>
-            <p class="intro-foro">Canal abierto para el reporte de fallos, sugerencias de nuevas funciones o consultas generales sobre las herramientas.</p>
-            
-            <div id="mensajes-foro" class="caja-mensajes">
-                </div>
-
-            <div class="controles-foro">
-                <input type="text" id="nombre-usuario" placeholder="Nombre o Institución" required>
-                <textarea id="texto-mensaje" rows="4" placeholder="Escriba su consulta o sugerencia aquí..." required></textarea>
-                <button onclick="enviarMensaje()">Enviar Aporte</button>
-            </div>
-        </section>
+</section>
     </main>
 
     <footer>

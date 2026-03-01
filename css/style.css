@@ -61,64 +61,87 @@ header p {
     letter-spacing: 2px;
 }
 
-/* GRILLA DE MÓDULOS */
+/* --- CONTENEDOR DE PROYECTOS --- */
 .grid-proyectos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-    gap: 25px;
-    max-width: 1100px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
 }
 
-/* --- ESTILO DE TARJETA ARCADE --- */
+/* --- LA TARJETA (Caja del Módulo) --- */
 .card {
-    background: rgba(0, 0, 0, 0.8) !important; /* Fondo negro sólido para que se lea bien */
-    border: 2px solid var(--neon-cyan) !important; /* El borde kyan que te gusta */
-    padding: 20px;
-    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.9) !important; /* Fondo negro sólido */
+    border: 2px solid var(--neon-cyan) !important; /* Borde neón Cyan */
+    padding: 0; /* Quitamos padding para que el visual ocupe todo el ancho arriba */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centramos todo el contenido */
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); /* Brillo sutil */
-    transition: transform 0.3s;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
 }
 
 .card:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
     box-shadow: 0 0 25px var(--neon-cyan);
 }
 
-/* --- TITULOS Y TEXTOS DENTRO DE LA TARJETA --- */
-.card h3 {
-    color: var(--neon-cyan) !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 15px 0;
-    font-size: 1.5rem;
-}
-
-.card p {
-    color: #e0e0e0 !important; /* Gris claro para que sea legible */
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-/* --- EL ESPACIO PARA EL ICONO (Lo que antes era blanco) --- */
+/* --- ESPACIO VISUAL (Donde va el arte ASCII) --- */
 .card-visual {
-    width: 100%;
-    height: 100px;
+    height: 120px;
     background: #050505;
-    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem; /* Tamaño de los símbolos ASCII */
+    font-size: 2rem;
     color: var(--neon-cyan);
     text-shadow: 0 0 10px var(--neon-cyan);
 }
 
+/* --- TEXTOS DENTRO DE LA TARJETA --- */
+.card-body {
+    padding: 20px;
+    text-align: left;
+}
+
+.card h3 {
+    color: var(--neon-cyan) !important; /* Título en Cyan */
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.card p {
+    color: #e0e0e0 !important; /* Gris muy claro para leer bien */
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    min-height: 60px; /* Para que todas las cajas midan lo mismo */
+}
+
+/* --- BOTÓN ACCEDER --- */
+.card button {
+    background: transparent !important;
+    border: 1px solid var(--neon-cyan) !important;
+    color: var(--neon-cyan) !important;
+    padding: 10px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: var(--neon-cyan) !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+   
 /* FORO / TRANSMISIÓN */
 #foro {
     max-width: 800px;
