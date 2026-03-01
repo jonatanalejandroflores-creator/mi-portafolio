@@ -106,3 +106,44 @@ header p {
     padding: 15px;
     overflow-y: auto;
 }
+
+/* --- Mejora del Foro --- */
+.controles-foro {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.controles-foro input, 
+.controles-foro textarea {
+    width: 100%; /* Que ocupen todo el ancho */
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.controles-foro input:focus, 
+.controles-foro textarea:focus {
+    border-color: #2563eb; /* Azul al hacer clic */
+}
+
+.controles-foro button {
+    background-color: #10b981; /* Verde esmeralda para el botón de enviar */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.controles-foro button:hover {
+    background-color: #059669;
+}
