@@ -32,8 +32,15 @@ onSnapshot(q, (snapshot) => {
     snapshot.docs.forEach(doc => {
         const data = doc.data();
         const p = document.createElement('p');
-        p.style.margin = "5px 0";
-        p.innerHTML = `<span style="color:#00ffff">${data.nombre}:</span> ${data.mensaje}`;
+        p.style.fontSize = "0.85rem";
+        p.style.padding = "2px 5px";
+        p.style.borderBottom = "1px solid rgba(0, 255, 255, 0.1)"; // Una línea divisoria sutil
+        
+        p.innerHTML = `
+            <span style="color: #555;">></span> 
+            <span style="color: var(--neon-orange); font-weight: bold;">[${data.nombre.toUpperCase()}]:</span> 
+            <span style="color: #eee;">${data.mensaje}</span>
+        `;
         caja.appendChild(p);
     });
     caja.scrollTop = caja.scrollHeight;
